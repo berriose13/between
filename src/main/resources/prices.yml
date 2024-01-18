@@ -1,0 +1,70 @@
+openapi: 3.0.0
+info:
+  title: Price API
+  description: API para obtener precios
+  version: 1.0.0
+
+paths:
+  /prices/obtener:
+    get:
+      summary: Obtiene una lista de precios
+      description: Retorna una lista de precios basada en los criterios de producto, marca y fecha.
+      parameters:
+        - in: query
+          name: date
+          required: false
+          schema:
+            type: string
+            format: date-time
+          description: Fecha y hora en formato ISO 8601.
+        - in: query
+          name: productId
+          required: false
+          schema:
+            type: integer
+          description: ID del producto.
+        - in: query
+          name: brandId
+          required: false
+          schema:
+            type: integer
+          description: ID de la marca.
+      responses:
+        '200':
+          description: Lista de precios obtenida con éxito
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PriceResponseDto'
+        '400':
+          description: Petición incorrecta
+        '500':
+          description: Error del servidor
+
+components:
+  schemas:
+    PriceResponseDto:
+      type: object
+      properties:
+        productoId:
+          type: integer
+          description: ID del producto.
+        cadenaId:
+          type: integer
+          description: ID de la cadena.
+        moneda:
+          type: string
+          description: Tipo de moneda.
+        precioFinal:
+          type: integer
+          description: Precio final del producto.
+        fechaInicio:
+          type: string
+          format: date-time
+          description: Fecha de inicio del precio en formato ISO 8601.
+        fechaFinal:
+          type: string
+          format: date-time
+          description: Fecha final del precio en formato ISO 8601.
