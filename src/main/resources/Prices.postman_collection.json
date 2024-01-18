@@ -1,0 +1,69 @@
+{
+	"info": {
+		"_postman_id": "9bf3f99c-56fe-4ea5-baa3-e25f01dee54e",
+		"name": "Prices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6961532"
+	},
+	"item": [
+		{
+			"name": "getPrices",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/prices/obtener?brandId=1&productId=35455&date=2024-01-14T10:00:00",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prices",
+						"obtener"
+					],
+					"query": [
+						{
+							"key": "brandId",
+							"value": "1"
+						},
+						{
+							"key": "productId",
+							"value": "35455"
+						},
+						{
+							"key": "date",
+							"value": "2024-01-14T10:00:00",
+							"description": "test1 solicitado"
+						},
+						{
+							"key": "date",
+							"value": "2024-01-14T16:00:00",
+							"description": "test2 solcitado",
+							"disabled": true
+						},
+						{
+							"key": "date",
+							"value": "2024-01-14T21:00:00",
+							"description": "test3 solcitado",
+							"disabled": true
+						},
+						{
+							"key": "date",
+							"value": "2024-01-15T10:00:00",
+							"description": "test4 solcitado",
+							"disabled": true
+						},
+						{
+							"key": "date",
+							"value": "2024-01-16T21:00:00",
+							"description": "test5 solcitado",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
